@@ -1,5 +1,9 @@
 export class SolarAge {
   constructor(planet) {
-    this.planet = planet;
+    if(planet !== undefined) {
+      this.planet = planet;
+    } else {
+      this.planet = "earth";
+    }
   }
 }
