@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jacksonlevine/solarAgeCalculator/issues"
   },
-  "homepage": "https://github.com/jacksonlevine/solarAgeCalculator#readme"
+  "homepage": "https://github.com/jacksonlevine/solarAgeCalculator#readme",
+  "devDependencies": {
+    "webpack": "4.46.0"
+  }
 }
