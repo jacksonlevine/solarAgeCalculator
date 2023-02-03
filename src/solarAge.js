@@ -1,5 +1,5 @@
 export class SolarAge {
-  constructor() {
-
+  constructor(planet) {
+    this.planet = planet;
   }
 }
