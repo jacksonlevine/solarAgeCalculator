@@ -20,4 +20,15 @@ describe('SolarAge class', () => {
     let solarNonsense = new SolarAge("blek");
     expect(solarNonsense.planet).toEqual("earth");
   });
+
+  describe('getHoursInDay method', () => {
+    test('it should return the hours in the day for the planet specified in property planet', () => {
+      solar.planet = "earth";
+      expect(solar.getHoursInDay()).toEqual(24);
+      solar.planet = "mars";
+      expect(solar.getHoursInDay()).toEqual(24.62);
+      solar.planet = "venus";
+      expect(solar.getHoursInDay()).toEqual(5832);
+    });
+  });
 }); 

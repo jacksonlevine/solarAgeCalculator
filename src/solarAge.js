@@ -17,4 +17,8 @@ export class SolarAge {
       this.planet = "earth";
     }
   }
+
+  getHoursInDay() {
+    
+  }
 }
