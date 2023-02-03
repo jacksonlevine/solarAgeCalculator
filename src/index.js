@@ -30,13 +30,15 @@ function display(displaySpot, userY, uiMap) {
 
 function buildString(userY, uiMap) {
   let screenWidth = window.innerWidth/16;
-  let screenHeight = 40;
+  let screenHeight = 60;
   let string = "";
   for(let j = screenHeight + userY; j > 0 + userY; j-=1) {
     for(let i = 0; i < screenWidth; i+=1) {
       if(uiMap.has(i+","+j)) {
         if(uiMap.get(i+","+j) == "@") {
           string += `<span class="red">${uiMap.get(i+","+j)}</span>`;
+        } else {
+          string += uiMap.get(i+","+j);
         }
       } else {
         string += ".";
@@ -53,9 +55,12 @@ function buildMap() {
   string.split(" ").forEach((element, index) => {
     for(let i = 0; i < element.length; i+=1) {
       if(element[i] != " ") {
-        map.setArray(map.bigLetters.get(element[i].toLowerCase()), 7, 7, 0+(i*8), 30 - (index*10));
+        map.setArray(map.bigLetters.get(element[i].toLowerCase()), 7, 7, 0+(i*8), 50 - (index*10));
       }
     }
+  });
+  Array.from("Please press S to scroll down.").forEach((char, index)=>{
+    map.set(index+","+16, char);
   });
   
   return map;

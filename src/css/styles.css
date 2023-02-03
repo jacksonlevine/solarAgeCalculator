@@ -8,12 +8,13 @@ body {
 #mainDisplay {
   white-space: pre;
   line-height:100%;
-  font-size:60%;
-  letter-spacing: 10px;
+  font-size:80%;
+  letter-spacing: 5px;
 }
 
 .red {
   color:red;
+  font-weight:bold;
 }
 .orange {
   color:rgb(255, 136, 0);
