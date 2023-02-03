@@ -21,4 +21,8 @@ export class SolarAge {
   getHoursInDay() {
     return this.planetList.get(this.planet);
   }
+
+  convertMyAge() {
+    
+  }
 }
