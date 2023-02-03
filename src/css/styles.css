@@ -1,0 +1,16 @@
+body {
+  text-align:center;
+  color:white;
+  background-color: black;
+  font-family: monospace;
+}
+
+.red {
+  color:red;
+}
+.orange {
+  color:rgb(255, 136, 0);
+}
+.yellow {
+  color:rgb(255, 217, 0);
+}
