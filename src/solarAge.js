@@ -31,7 +31,8 @@ export class SolarAge {
     return this.planetList.get(this.planet) * 365;
   }
 
-  yearsPassed() {
-    
+  yearsPassed(sinceAge, age, homePlanet) {
+    let difference = age - sinceAge;
+    return (this.planetList.get(homePlanet)*365*difference)/this.getHoursInYear();
   }
 }
