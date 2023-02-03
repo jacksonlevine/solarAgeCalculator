@@ -22,5 +22,15 @@ describe('asciiMap object', () => {
       expect(newMap.get(0+","+1)).toEqual("@");
       expect(newMap.get(1+","+1)).toEqual("#");
     });
+    test('it should skip adding any 0 characters that are in the string', () => {
+      let string =
+      "@#" +
+      "0@";
+      newMap.setArray(string, 2, 2, 0, 0);
+      expect(newMap.get(0+","+0)).toEqual(undefined);
+      expect(newMap.get(1+","+0)).toEqual("@");
+      expect(newMap.get(0+","+1)).toEqual("@");
+      expect(newMap.get(1+","+1)).toEqual("#");
+    });
   });
 });

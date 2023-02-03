@@ -1,6 +1,7 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
+import { asciiMap } from './../src/asciiMap.js';
 
 window.addEventListener("load", function() {
   let displaySpot = document.getElementById("mainDisplay");
@@ -33,7 +34,7 @@ function buildString(userY, uiMap) {
 }
 
 function buildMap() {
-  let map = new Map();
+  let map = new asciiMap();
   
   return map;
 }
