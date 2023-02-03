@@ -26,4 +26,8 @@ export class SolarAge {
     let totalHours = age * (this.planetList.get(homePlanet)*365);
     return ((totalHours/this.planetList.get(this.planet))/365);
   }
+
+  getHoursInYear() {
+    
+  }
 }

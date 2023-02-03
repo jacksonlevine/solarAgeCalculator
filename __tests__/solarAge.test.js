@@ -40,4 +40,13 @@ describe('SolarAge class', () => {
       expect(Math.round(solar.convertMyAge(10, "mercury"))).toEqual(587);
     });
   });
+
+  describe('getHoursInYear method', () => {
+    test('it should return the number of hours in a year on planet <planet>', () => {
+      solar.planet = "earth";
+      expect(solar.getHoursInYear()).toEqual(8760);
+      solar.planet = "mars"
+      expect(solar.getHoursInYear()).toEqual(8786.3);
+    });
+  });
 }); 
