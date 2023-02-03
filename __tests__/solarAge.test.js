@@ -15,4 +15,9 @@ describe('SolarAge class', () => {
     let solarEarth = new SolarAge();
     expect(solarEarth.planet).toEqual("earth");
   });
+
+  test('it should default to earth if the planet argument provided does not fit the name of a known planet', () => {
+    let solarNonsense = new SolarAge("blek");
+    expect(solarNonsense.planet).toEqual("earth");
+  });
 }); 
