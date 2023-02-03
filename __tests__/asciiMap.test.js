@@ -11,6 +11,18 @@ describe('asciiMap object', () => {
     expect(Object.getPrototypeOf(newMap).toString()).toEqual('[object Map]');
   });
 
+  test('it should have the bigLetters property that is a map of lowercase letters to 7x7 ascii block letters', ()=> {
+    expect(newMap.bigLetters.get("s")).toEqual(
+      "0@@@@@@" +
+      "@000000" +
+      "@000000" +
+      "0@@@@@0" +
+      "000000@" +
+      "000000@" +
+      "@@@@@@0"
+    );
+  });
+
   describe('setArray method', () => {
     test('it should take in string, height, width, x, and y, and set a grid of positions in the map based on the numbers given', () => {
       let string =

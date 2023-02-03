@@ -1,6 +1,7 @@
 export class asciiMap extends Map {
   constructor() {
     super();
+    this.bigLetters = new Map();
   }
 
   setArray(string, width, height, x, y) {
