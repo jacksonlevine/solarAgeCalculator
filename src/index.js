@@ -47,6 +47,15 @@ function buildString(userY, uiMap) {
       if(uiMap.has(i+","+j)) {
         if(uiMap.get(i+","+j) == "@") {
           string += `<span class="red">${uiMap.get(i+","+j)}</span>`;
+        } else 
+        if(uiMap.get(i+","+j) == "%"){
+          string += `<span class="blue">${uiMap.get(i+","+j)}</span>`;
+        } else 
+        if(uiMap.get(i+","+j) == "#"){
+          string += `<span class="green">${uiMap.get(i+","+j)}</span>`;
+        } else
+        if(uiMap.get(i+","+j) == "$"){
+          string += `<span class="yellow">${uiMap.get(i+","+j)}</span>`;
         } else {
           string += uiMap.get(i+","+j);
         }
@@ -78,24 +87,100 @@ function buildMap(init, age, homePlanet) {
 
   yHead -= 6;
   if(!init) {
+    let planetArt = new Map([
+      ["earth",
+    "0%##%0"+
+    "####%%"+
+    "#%##%#"+
+    "%%%#%#"+
+    "%%%##%"+
+    "0%%#%0"],
+    ["pluto",
+    "0=@==0"+
+    "==@@=="+
+    "==@@@="+
+    "@==@@="+
+    "@@=@=="+
+    "0@===0"],
+    ["neptune",
+    "0%%%%0"+
+    "%%%%%%"+
+    "%%%%%%"+
+    "%%%%%%"+
+    "%%%%%%"+
+    "0%%%%0"],
+    ["mars",
+    "0@@@@0"+
+    "@@@@@@"+
+    "@@@@@@"+
+    "@@@@@@"+
+    "@@@@@@"+
+    "0@@@@0"],
+    ["venus",
+    "0####0"+
+    "######"+
+    "######"+
+    "######"+
+    "######"+
+    "0####0"],
+    ["saturn",
+    "0====0"+
+    "======"+
+    "======"+
+    "@@@@@@"+
+    "======"+
+    "0====0"],
+    ["uranus",
+    "0####0"+
+    "@@@@@@"+
+    "######"+
+    "@@@@@@"+
+    "######"+
+    "0####0"],
+    ["jupiter",
+    "0$$$$0"+
+    "$$$$$$"+
+    "$$$$$$"+
+    "@@@@@@"+
+    "$$$$$$"+
+    "0$$$$0"],
+    ["mercury",
+    "0@@@@0"+
+    "$$@@$$"+
+    "$@@$@$"+
+    "@@@@@@"+
+    "@$$@@$"+
+    "0$@@$0"],
+    ]);
+    let xIndex = 0;
     Array.from(`Your age is ${age} years on planet ${homePlanet}.`).forEach((char, index)=>{
       map.set(index+","+yHead, char);
+      xIndex = index;
     });
-    yHead -=4;
+    if(planetArt.has(homePlanet)) {
+      map.setArray(planetArt.get(homePlanet), 6, 6, xIndex+1, yHead-3);
+    }
+    yHead -=7;
     let solar = new SolarAge("earth");
     let offset = false;
     solar.planetList.forEach((value, key) => {
+      xIndex = 0;
       offset = !offset;
       if(key != homePlanet) {
         solar.planet = key;
         Array.from(`Your age is ${solar.yearsPassed(0, age, homePlanet).toFixed(2)} years on planet ${key}.`).forEach((char, index)=>{
           map.set(((offset) ? 20 : 0)+ index+","+yHead, char);
+          xIndex = index + ((offset) ? 20 : 0);
         });
+        if(planetArt.has(key)) {
+          map.setArray(planetArt.get(key), 6, 6, xIndex+1, yHead-3);
+        }
+        
         yHead-=2;
         Array.from(`One day on ${key} is ${value} hours.`).forEach((char, index)=>{
           map.set(((offset) ? 20 : 0)+index+","+yHead, char);
         });
-        yHead-=4;
+        yHead-=7;
       }
     });
 
