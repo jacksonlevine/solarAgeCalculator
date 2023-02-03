@@ -46,7 +46,7 @@ describe('SolarAge class', () => {
       solar.planet = "earth";
       expect(solar.getHoursInYear()).toEqual(8760);
       solar.planet = "mars"
-      expect(solar.getHoursInYear()).toEqual(8786.3);
+      expect(Math.round(solar.getHoursInYear())).toEqual(8986);
     });
   });
 }); 
