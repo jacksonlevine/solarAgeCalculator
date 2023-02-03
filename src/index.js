@@ -5,23 +5,35 @@ import './css/styles.css';
 window.addEventListener("load", function() {
   let displaySpot = document.getElementById("mainDisplay");
   let userY = 0;
-  let uiMap = new Map();
+  let uiMap = buildMap();
   window.setInterval(()=> {
-    display(displaySpot, userY);
+    display(displaySpot, userY, uiMap);
   }, 50);
 });
 
-function display(displaySpot, userY) {
-  displaySpot.innerHTML = buildString(userY);
+function display(displaySpot, userY, uiMap) {
+  displaySpot.innerHTML = buildString(userY, uiMap);
 }
 
-function buildString(userY) {
+function buildString(userY, uiMap) {
   let screenWidth = 40;
   let screenHeight = 40;
   let string = "";
   for(let j = screenHeight + userY; j > 0 + userY; j-=1) {
     for(let i = 0; i < screenWidth; i+=1) {
-      string += 
+      if(uiMap.has(i+","+j)) {
+        string += uiMap.get(i+","+j);
+      } else {
+        string += ".";
+      }
     }
+    string += "\n";
   }
+  return string;
+}
+
+function buildMap() {
+  let map = new Map();
+  
+  return map;
 }

@@ -5,6 +5,12 @@ body {
   font-family: monospace;
 }
 
+#mainDisplay {
+  white-space: pre;
+  line-height:100%;
+  letter-spacing: 10px;
+}
+
 .red {
   color:red;
 }
