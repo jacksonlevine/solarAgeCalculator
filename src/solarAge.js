@@ -30,4 +30,8 @@ export class SolarAge {
   getHoursInYear() {
     return this.planetList.get(this.planet) * 365;
   }
+
+  yearsPassed() {
+    
+  }
 }

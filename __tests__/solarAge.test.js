@@ -37,7 +37,7 @@ describe('SolarAge class', () => {
       solar.planet = "earth";
       expect(solar.convertMyAge(10, "earth")).toEqual(10);
       expect(solar.convertMyAge(10, "venus")).toEqual(2430);
-      expect(Math.round(solar.convertMyAge(10, "mercury"))).toEqual(587);
+      expect(solar.convertMyAge(10, "mercury")).toBeCloseTo(586.66, 1);
     });
   });
 
@@ -46,7 +46,16 @@ describe('SolarAge class', () => {
       solar.planet = "earth";
       expect(solar.getHoursInYear()).toEqual(8760);
       solar.planet = "mars"
-      expect(Math.round(solar.getHoursInYear())).toEqual(8986);
+      expect(solar.getHoursInYear()).toBeCloseTo(8986.3, 1);
+    });
+  });
+
+  describe('yearsPassed method', () => {
+    test('it should take arguments sinceAge, age, homePlanet and should return amount of years on planet <planet> have passed from <sinceAge> to <age>', () => {
+      solar.planet = "earth";
+      expect(solar.yearsPassed(0, 10, "earth")).toEqual(10);
+      solar.planet = "venus";
+      expect(solar.yearsPassed(0, 10, "earth")).toBeCloseTo(.04);
     });
   });
 }); 
