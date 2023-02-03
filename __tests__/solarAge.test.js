@@ -36,7 +36,8 @@ describe('SolarAge class', () => {
     test('it should return your converted age to <planet> years, depending on the age and home planet given', () => {
       solar.planet = "earth";
       expect(solar.convertMyAge(10, "earth")).toEqual(10);
-      expect(solar.convertMyAge(10, "venus")).toEqual(58320);
+      expect(solar.convertMyAge(10, "venus")).toEqual(2430);
+      expect(Math.round(solar.convertMyAge(10, "mercury"))).toEqual(587);
     });
   });
 }); 
