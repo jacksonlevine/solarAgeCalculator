@@ -8,7 +8,10 @@ export class asciiMap extends Map {
       for(let i = 0; i < width; i+=1) {
         let spotX = i+x;
         let spotY = j+y;
-        this.set(spotX+','+spotY, string[(((height-1)*width)-(j*width))+i]);
+        let stringSnippet = string[(((height-1)*width)-(j*width))+i];
+        if(stringSnippet != "0") {
+          this.set(spotX+','+spotY, stringSnippet);
+        }
       }
     }
   }
