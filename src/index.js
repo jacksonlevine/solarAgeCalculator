@@ -18,17 +18,17 @@ window.addEventListener("load", function () {
   });
   window.addEventListener('keydown', (event) => {
     switch (event.key) {
-      case "w": case "ArrowUp":
-        if (userY < 0) {
+    case "w": case "ArrowUp":
+      if (userY < 0) {
         userY += 1;
-        }
-        break;
-      case "s": case "ArrowDown":
-        userY -= 1;
-        break;
-      default:
-        break;
-  }
+      }
+      break;
+    case "s": case "ArrowDown":
+      userY -= 1;
+      break;
+    default:
+      break;
+    }
   });
   window.setInterval(() => {
     display(displaySpot, userY, uiMap);
@@ -50,17 +50,17 @@ function buildString(userY, uiMap) {
         if (uiMap.get(i + "," + j) == "@") {
           string += `<span class="red">${uiMap.get(i + "," + j)}</span>`;
         } else
-          if (uiMap.get(i + "," + j) == "%") {
-            string += `<span class="blue">${uiMap.get(i + "," + j)}</span>`;
-          } else
-            if (uiMap.get(i + "," + j) == "#") {
-              string += `<span class="green">${uiMap.get(i + "," + j)}</span>`;
-            } else
-              if (uiMap.get(i + "," + j) == "$") {
-                string += `<span class="yellow">${uiMap.get(i + "," + j)}</span>`;
-              } else {
-                string += uiMap.get(i + "," + j);
-              }
+        if (uiMap.get(i + "," + j) == "%") {
+          string += `<span class="blue">${uiMap.get(i + "," + j)}</span>`;
+        } else
+        if (uiMap.get(i + "," + j) == "#") {
+          string += `<span class="green">${uiMap.get(i + "," + j)}</span>`;
+        } else
+        if (uiMap.get(i + "," + j) == "$") {
+          string += `<span class="yellow">${uiMap.get(i + "," + j)}</span>`;
+        } else {
+          string += uiMap.get(i + "," + j);
+        }
       } else {
         string += ".";
       }
