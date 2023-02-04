@@ -19,19 +19,21 @@ An experiment in ASCII-art based web design.
 1. Clone this repository
 2. Navigate to the top folder in your terminal.
 3. Run `npm install`
-4.
+4. Run `npm run build`
+5. Navigate to the "dist" folder
+6. Launch index.html in any browser! 
 
 ## Online or Mobile Setup:
 1. For online desktop users, visit [the GitHub Pages link.](https://jacksonlevine.github.io/solarAgeCalculator)
 * Unfortunately does not support mobile device interaction at this time.
 
 ## Known Bugs:
-* Visual tearing of mobiles around Y:-30 (Mystery!)
-* "HUD elements" positions are all out of whack.
+* Does not support mobile or touch-screen devices properly.
+* Content may be obscured. If your device allows, zooming out on the webpage should resolve this issue.
 
 # Credits:
 
-Thank you to Vincent Bruijn @y-a-v-a - for porting Ken Perlin's smooth noise algorithm to JavaScript.
+Thank you to Epicodus for the prompt!
 
 _Please_ report any bugs to jack@netbug.us!
 
