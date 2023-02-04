@@ -7,11 +7,11 @@ An experiment in ASCII-art based web design.
 
 * ECMAScript 6
 * HTML
-* Live dev server
+* Live Development Server
 * CSS
-* npm Packages
-* webpack bundling
+* NPM Packages
 * Unit testing with Jest (100% line coverage!)
+* Webpack bundling
 
 # Installation/Setup:
 
